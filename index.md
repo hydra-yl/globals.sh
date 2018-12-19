@@ -1,12 +1,12 @@
 # GlobalSSH产品介绍
 &ensp; &ensp;数据传输稳定性一直是海外主机管理不能回避的话题，在主机登录、资料上传时频繁出现卡顿、丢包等现象，直接影响运维效率。
 
-![image](http://globalssh.cn-sh2.ufileos.com/image001.png)
+![image](https://globalssh.io/image001.png)
 <br /><center>TCP丢包测试（未使用GlobalSSH）</center>
 
 &ensp; &ensp; GlobalSSH旨在解决因为跨国网络不稳定的情况下，通过远程管理服务器时，经常会出现卡顿、连接失败、传输速度较慢等现象。
 
-![image](http://globalssh.cn-sh2.ufileos.com/image003.png) 
+![image](https://globalssh.io/image003.png) 
 <br /><center>TCP丢包测试（使用GlobalSSH）</center>
 
 &ensp; &ensp; 截止目前，产品共有华盛顿、洛杉矶、香港、新加坡、东京、法兰克福6个节点，可覆盖美洲、亚洲、欧洲等大多数海外区域。
@@ -27,23 +27,23 @@
 # 创建与使用GlobalSSH
 ## 1. 使用控制台创建
 ### 1.1	从主机或网络列表创建
-![image](http://globalssh.cn-sh2.ufileos.com/image005.png) 
+![image](https://globalssh.io/image005.png) 
 <br />（主机列表）
 
 
- ![image](http://globalssh.cn-sh2.ufileos.com/image007.png) 
+ ![image](https://globalssh.io/image007.png) 
  <br />（网络列表）
 
 &emsp; &emsp; 已购买海外云主机或EIP的用户可点击列表页中的GlobalSSH图标（红框位置）开启GlobalSSH
 
 ### 1.2	购买主机时创建
- ![image](http://globalssh.cn-sh2.ufileos.com/image009.png)
+ ![image](https://globalssh.io/image009.png)
  <br /><center>（创建主机GlobalSSH选项）</center>
 
 &emsp; &emsp; 用户购买主机时，GlobalSSH选项已默认开启。用户成功购买海外主机（需绑定外网弹性IP）后，默认获得对应的GlobalSSH
 
 ### 1.3	从PathX入口创建
-![image](http://globalssh.cn-sh2.ufileos.com/image011.png) 
+![image](https://globalssh.io/image011.png) 
  <br /><center>（PathX入口）</center>
  
 &emsp; &emsp; GlobalSSH同样也适用于第三方云主机，用户可以进入全球动态加速PathX页面，点击GlobalSSH标签，进行创建
@@ -100,7 +100,7 @@ Windows用户在远程桌面程序中的计算机处，填写该加速域名，�
 &ensp; &ensp; GlobalSSH是一款保障海外数据中心运维的网络产品，采用了UCloud众多IaaS产品如：ULB4（四层LoadBalance服务）、UDPN（洲际数据中心内网互联、0丢包）及高包量云主机。引入智能DNS服务赋予用户就近接入的能力。网络转发基于成熟稳定的GRE、NAT技术，支持TCP端口（除80、443）四层转发。
 
 
- ![image](http://globalssh.cn-sh2.ufileos.com/image013.png)
+ ![image](https://globalssh.io/image013.png)
 <br /><center>（GlobalSSH架构原理示意图）</center>
 
 ## 关于CLI
@@ -114,28 +114,28 @@ Windows用户在远程桌面程序中的计算机处，填写该加速域名，�
 
 “ucloud uhost create -h” 简洁提示信息：
 
- ![image](http://globalssh.cn-sh2.ufileos.com/image015.png)
+ ![image](https://globalssh.io/image015.png)
 
 “ucloud uhost create - -help” 详细提示信息：
 
- ![image](http://globalssh.cn-sh2.ufileos.com/image017.png)
+ ![image](https://globalssh.io/image017.png)
 
 - 命令、参数自动补全，及时的操作效果反馈
 
 &ensp; &ensp; 习惯快速敲击命令的工程师们，CLI提供符合一般输入习惯的自动补全功能，极大提高工作效率。该功能可以覆盖部分较长参数的自动补全，建议大家使用时积极尝试。
 
-![image](http://globalssh.cn-sh2.ufileos.com/image019.png)
+![image](https://globalssh.io/image019.png)
  
 &ensp; &ensp; 考虑UCloud对用户数据安全、隐私的重视，命令补全功能在下载或编译时，没有强制自动更新终端的配置文件，请用户在本地配置文件 ~/.bash_profile or ~/.bashrc 增加自动补全脚本。
 
 &ensp; &ensp; 除了自动补全，CLI提供操作必要的操作过程动态展示和结果反馈。如:
 主机重启操作
 
-![image](http://globalssh.cn-sh2.ufileos.com/image021.png) 
+![image](https://globalssh.io/image021.png) 
 
 命令操作失败时，原因提示：
 
-![image](http://globalssh.cn-sh2.ufileos.com/image023.png) 
+![image](https://globalssh.io/image023.png) 
 
 
 
