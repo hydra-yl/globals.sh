@@ -1,13 +1,22 @@
 # GlobalSSH产品介绍
 &ensp; &ensp;数据传输稳定性一直是海外主机管理不能回避的话题，在主机登录、资料上传时频繁出现卡顿、丢包等现象，直接影响运维效率。
 
-![image](https://globalssh.io/image001.png)
-<br /><center>TCP丢包测试（未使用GlobalSSH）</center>
+
+```
+--- 152.32.140.27 hping statistic ---
+20 packets tramitted, 18 packets received, 10% packet loss
+round-trip min/avg/max = 424.1/1586.3/7856.4 ms
+```
+<center>TCP丢包测试（未使用GlobalSSH）</center>
 
 &ensp; &ensp; GlobalSSH旨在解决因为跨国网络不稳定的情况下，通过远程管理服务器时，经常会出现卡顿、连接失败、传输速度较慢等现象。
 
-![image](https://globalssh.io/image003.png) 
-<br /><center>TCP丢包测试（使用GlobalSSH）</center>
+```
+--- 152.32.140.27.ipssh.net hping statistic ---
+20 packets tramitted, 20 packets received, 0% packet loss
+round-trip min/avg/max = 276.1/530.4/1100.9 ms
+``` 
+<center>TCP丢包测试（使用GlobalSSH）</center>
 
 &ensp; &ensp; 截止目前，产品共有华盛顿、洛杉矶、香港、新加坡、东京、法兰克福6个节点，可覆盖美洲、亚洲、欧洲等大多数海外区域。
 
@@ -114,28 +123,220 @@ Windows用户在远程桌面程序中的计算机处，填写该加速域名，�
 
 “ucloud uhost create -h” 简洁提示信息：
 
- ![image](https://globalssh.io/image030.png)
+```
+$ ucloud uhost create -h
+Usage:
+ ucloud uhost create [flags]
+ flags may be         --async | --cpu | --memory-gb | --password | --image-id | --vpc-id |
+                      --subnet-id | --name | --bind-eip | --create-eip-line |
+                      --create-eip-bandwidth-mb | --create-eip-charge-mode | --create-eip-name
+                      | --create-eip-remark | --create-eip-coupon-id | --charge-type |
+                      --quantity | --project-id | --region | --zone | --type |
+                      --net-capability | --os-disk-type | --os-disk-size-gb |
+                      --os-disk-backup-type | --data-disk-type | --data-disk-size-gb |
+                      --data-disk-backup-type | --firewall-id | --group | --debug | --json | --help
+
+Use "ucloud uhost create --help" for details.
+```
+
 
 “ucloud uhost create - -help” 详细提示信息：
 
- ![image](https://globalssh.io/image031.png)
+```
+$ ucloud uhost create --help
+Usage:
+
+  ucloud uhost create [flags]
+
+Flags:
+
+  --async                               Optional. Do not wait for the long-running operation
+                                        to finish.
+
+  --cpu     int                         Required. The count of CPU cores. Optional parameters:
+                                        {1, 2, 4, 8, 12, 16, 24, 32} (default 4)
+
+  --memory-gb     int                   Required. Memory size. Unit: GB. Range: [1, 128],
+                                        multiple of 2 (default 8)
+
+  --password     string                 Required. Password of the uhost user(root/ubuntu)
+
+  --image-id     string                 Required. The ID of image. see 'ucloud image list'
+
+  --vpc-id     string                   Optional. VPC ID. This field is required under VPC2.0.
+                                        See 'ucloud vpc list'
+
+  --subnet-id     string                Optional. Subnet ID. This field is required under
+                                        VPC2.0. See 'ucloud subnet list'
+
+  --name     string                     Optional. UHost instance name (default "UHost")
+
+  --bind-eip     string                 Optional. Bind eip to uhost. Value could be resource
+                                        id or IP Address
+
+  --create-eip-line     string          Optional. Required if you want to create new EIP. Line
+                                        of created eip to bind with the uhost
+
+  --create-eip-bandwidth-mb     int     Optional. Required if you want to create new EIP.
+                                        Bandwidth(Unit:Mbps).The range of value related to
+                                        network charge mode. By traffic [1, 200]; by bandwidth
+                                        [1,800] (Unit: Mbps); it could be 0 if the eip belong
+                                        to the shared bandwidth
+                                        
+  --create-eip-charge-mode     string   Optional. 'Traffic','Bandwidth' or 'ShareBandwidth'
+                                        (default "Bandwidth")
+
+  --create-eip-name     string          Optional. Name of created eip to bind with the uhost
+
+  --create-eip-remark     string        Optional.Remark of your EIP.
+
+  --create-eip-coupon-id     string     Optional.Coupon ID, The Coupon can deducte part of the
+                                        payment,see https://accountv2.ucloud.cn
+
+  --charge-type     string              Optional.'Year',pay yearly;'Month',pay
+                                        monthly;'Dynamic', pay hourly(requires access)
+                                        (default "Month")
+
+  --quantity     int                    Optional. The duration of the instance. N
+                                        years/months. (default 1)  
+                                        
+  --project-id     string               Optional. Assign project-id (default "org-ejcxl3")
+
+  --region     string                   Optional. Assign region (default "cn-bj2")
+
+  --zone     string                     Optional. Assign availability zone
+
+  --type     string                     Optional. Default is 'N2' of which cpu is V4 and sata
+                                        disk. also support 'N1' means V3 cpu and sata
+                                        disk;'I2' means V4 cpu and ssd disk;'D1' means big
+                                        data model;'G1' means GPU type, model for K80;'G2'
+                                        model for P40; 'G3' model for V100 (default "N2")
+
+  --net-capability     string           Optional. Default is 'Normal', also support 'Super'
+                                        which will enhance multiple times network capability
+                                        as before (default "Normal")
+
+  --os-disk-type     string             Optional. Enumeration value. 'LOCAL_NORMAL', Ordinary
+                                        local disk; 'CLOUD_NORMAL', Ordinary cloud disk;
+                                        'LOCAL_SSD',local ssd disk; 'CLOUD_SSD',cloud ssd
+                                        disk; 'EXCLUSIVE_LOCAL_DISK',big data. The disk only
+                                        supports a limited combination. (default "LOCAL_NORMAL")
+
+  --os-disk-size-gb     int             Optional. Default 20G. Windows should be bigger than
+                                        40G Unit GB (default 20)
+
+  --os-disk-backup-type     string      Optional. Enumeration value, 'NONE' or 'DATAARK'.
+                                        DataArk supports real-time backup, which can restore
+                                        the disk back to any moment within the last 12 hours.
+                                        (Normal Local Disk and Normal Cloud Disk Only)
+                                        (default "NONE")
+
+  --data-disk-type     string           Optional. Enumeration value. 'LOCAL_NORMAL', Ordinary
+                                        local disk; 'CLOUD_NORMAL', Ordinary cloud disk;
+                                        'LOCAL_SSD',local ssd disk; 'CLOUD_SSD',cloud ssd
+                                        disk; 'EXCLUSIVE_LOCAL_DISK',big data. The disk only
+                                        supports a limited combination. (default "LOCAL_NORMAL")
+
+  --data-disk-size-gb     int           Optional. Disk size. Unit GB (default 20)
+
+  --data-disk-backup-type     string    Optional. Enumeration value, 'NONE' or 'DATAARK'.
+                                        DataArk supports real-time backup, which can restore
+                                        the disk back to any moment within the last 12 hours.
+                                        (Normal Local Disk and Normal Cloud Disk Only)
+                                        (default "NONE")
+
+  --firewall-id     string              Optional. Firewall Id, default: Web recommended
+                                        firewall. see 'ucloud firewall list'.
+
+  --group     string                    Optional. Business group (default "Default")
+
+  --help, -h                            help for create
+
+Global Flags:
+
+  --debug, -d   Running in debug mode
+
+  --json, -j    Print result in JSON format whenever possible  
+```
 
 - 命令、参数自动补全，及时的操作效果反馈
 
 &ensp; &ensp; 习惯快速敲击命令的工程师们，CLI提供符合一般输入习惯的自动补全功能，极大提高工作效率。该功能可以覆盖部分较长参数的自动补全，建议大家使用时积极尝试。
 
-![image](https://globalssh.io/image019.png)
+
+```
+$ ucloud uhost
+Usage: [command]
+
+Commands:
+
+  list           List all UHost Instances
+
+  create         Create UHost instance
+
+  delete         Delete Uhost instance
+
+  stop           Shut down uhost instance
+
+  start          Start Uhost instance
+
+  restart        Restart uhost instance
+
+  poweroff       Analog power off Uhost instnace
+
+  resize         Resize uhost instance,such as cpu core count, memory size and disk size
+
+  clone          Create an uhost with the same configuration as another uhost
+
+  reset-password Reset the administrator password for the UHost instances.
+
+  reinstall-os   Reinstall the operating system of the UHost instance
+
+  create-image   Create image from an uhost instance
+
+Flags:
+
+  --help, -h   help for uhost
+
+Global Flags:
+
+  --debug, -d   Running in debug mode
+
+  --json, -j    Print result in JSON format whenever possible
+
+Use "ucloud uhost [command] --help" for more information about a command.
+```
  
 &ensp; &ensp; 考虑UCloud对用户数据安全、隐私的重视，命令补全功能在下载或编译时，没有强制自动更新终端的配置文件，请用户在本地配置文件 ~/.bash_profile or ~/.bashrc 增加自动补全脚本。
 
 &ensp; &ensp; 除了自动补全，CLI提供操作必要的操作过程动态展示和结果反馈。如:
 主机重启操作
 
-![image](https://globalssh.io/image021.png) 
+```
+$ ucloud uhost restart --uhost-id uhost-5ar4iv
+UHost:[uhost-5ar4iv] is restarting...done
+```
+
 
 命令操作失败时，原因提示：
 
-![image](https://globalssh.io/image023.png) 
+
+```
+$ ucloud uhost create --cpu 1
+Error: required flag(s) "password", "image-id" not set
+Usage:
+ ucloud uhost create [flags]
+ flags may be         --async | --cpu | --memory-gb | --password | --image-id | --vpc-id |
+                      --subnet-id | --name | --bind-eip | --create-eip-line |
+                      --create-eip-bandwidth-mb | --create-eip-charge-mode | --create-eip-name
+                      | --create-eip-remark | --create-eip-coupon-id | --charge-type |
+                      --quantity | --project-id | --region | --zone | --type |
+                      --net-capability | --os-disk-type | --os-disk-size-gb |
+                      --os-disk-backup-type | --data-disk-type | --data-disk-size-gb |
+                      --data-disk-backup-type | --firewall-id | --group | --debug | --json | --help
+
+Use "ucloud uhost create --help" for details.
+```
 
 
 
