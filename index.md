@@ -1,9 +1,3 @@
-<head>
-<title>GlobalSSH</title>
-<link rel="icon" type="image/png" href="ssh-tag.png">
-</head>
-<body>
-<div markdown="1">
 # GlobalSSH产品介绍
 &ensp; &ensp;数据传输稳定性一直是海外主机管理不能回避的话题，在主机登录、资料上传时频繁出现卡顿、丢包等现象，直接影响运维效率。
 
@@ -343,5 +337,3 @@ Usage:
 
 Use "ucloud uhost create --help" for details.
 ```
-</div>
-</body>
