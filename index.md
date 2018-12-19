@@ -114,11 +114,11 @@ Windows用户在远程桌面程序中的计算机处，填写该加速域名，�
 
 “ucloud uhost create -h” 简洁提示信息：
 
- ![image](https://globalssh.io/image015.png)
+ ![image](https://globalssh.io/image030.png)
 
 “ucloud uhost create - -help” 详细提示信息：
 
- ![image](https://globalssh.io/image017.png)
+ ![image](https://globalssh.io/image031.png)
 
 - 命令、参数自动补全，及时的操作效果反馈
 
