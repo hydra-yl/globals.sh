@@ -312,7 +312,7 @@ Global Flags:
 Use "ucloud uhost [command] --help" for more information about a command.
 ```
  
-&ensp; &ensp; 考虑UCloud对用户数据安全、隐私的重视，命令补全功能在下载或编译时，没有强制自动更新终端的配置文件，请用户在本地配置文件 ~/.bash_profile or ~/.bashrc 增加自动补全脚本。
+&ensp; &ensp; 鉴于隐私与数据安全，命令补全功能在下载或编译时，没有强制自动更新终端的配置文件，请用户在本地配置文件 ~/.bash_profile or ~/.bashrc 增加自动补全脚本。
 
 &ensp; &ensp; 除了自动补全，CLI提供操作必要的操作过程动态展示和结果反馈。如:
 主机重启操作
