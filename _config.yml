@@ -1,5 +1,3 @@
-title:  "GlobalSSH"
 favicon: "favicon.ico"
-subtitle:  "GlobalSSH"
-theme:  jekyll-theme-slate
+theme:  jekyll-theme-minimal
 url: "https://globals.sh"
