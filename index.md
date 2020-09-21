@@ -95,7 +95,7 @@ Windows用户在RDP客户端的计算机处填写：
 
 -  [使用GlobalSSH服务加速境外服务器ssh访问](https://blog.lgf.im/2020/use-ucloud-globalssh-to-speedup-server-ssh.html)
 
--  [针对境外服务器，UCLOUD免费提供GlobalSSH加速服务](https://51.ruyo.net/15773.html)
+-  [针对境外服务器提供GlobalSSH加速服务](https://51.ruyo.net/15773.html)
 
 
 
