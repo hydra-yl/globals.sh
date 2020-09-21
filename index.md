@@ -65,7 +65,7 @@ GlobalSSH旨在解决因为跨国网络不稳定的情况下，通过远程管�
 
 # 场景示例
 
-[创建GlobalSSH](https://console.ucloud.cn/upathx/globalssh) 
+使用页面：[创建GlobalSSH](https://console.ucloud.cn/upathx/globalssh) 
 
 #### 基础使用
 
