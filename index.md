@@ -97,6 +97,8 @@ Windows用户在RDP客户端的计算机处填写：
 
 -  [针对境外服务器提供GlobalSSH加速服务](https://51.ruyo.net/15773.html)
 
+-  [通过GlobalSSH加速github推拉速度](https://mozz.in/github/2020/08/16/ucloud-globalssh.html)
+
 
 
 # 写在最后
